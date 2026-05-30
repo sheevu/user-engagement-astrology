@@ -132,6 +132,18 @@
             REVEAL: "https://cdn.pixabay.com/audio/2022/03/24/audio_823c316712.mp3", 
         };
 
+        const CARD_NAMES = [
+            "Neel Bindu",
+            "Vyom Dwar",
+            "Antariksh Jyoti"
+        ];
+
+        const CARD_SUBTITLES = [
+            "The Blue Core",
+            "Cosmic Portal",
+            "Light of Space"
+        ];
+
         const calculateLifePath = (dateString) => {
             const digits = dateString.replace(/\D/g, '').split('').map(Number);
             if (digits.length === 0) return 0;
@@ -144,18 +156,18 @@
         };
 
         const COSMIC_DATA = {
-            1: { planet: "Sun (Surya)", crystal: "Ruby", meaning: "You carry the radiance of the Sun. A born leader with natural authority, your soul chosen a path of vitality and creation.", meaning_hi: "आप सूर्य के दीप्ति को धारण करते हैं। जन्मजात नेता, आपकी आत्मा जीवन शक्ति और निर्माण का मार्ग चुनती है।", hex: "#d97706" },
-            2: { planet: "Moon (Chandra)", crystal: "Moonstone", meaning: "Guided by the Moon, you are the peacemaker. Your intuition is your superpower.", meaning_hi: "चंद्रमा द्वारा निर्देशित, आप शांति स्थापक हैं। आपका अंतर्ज्ञान आपकी शक्ति है।", hex: "#93c5fd" },
-            3: { planet: "Jupiter (Guru)", crystal: "Yellow Sapphire", meaning: "Blessed by Jupiter, you are the creator. Optimism flows through you naturally.", meaning_hi: "बृहस्पति से आशीर्वादित, आप निर्माता हैं। आशावाद आपके माध्यम से प्रवाहित होता है।", hex: "#fbbf24" },
-            4: { planet: "Rahu", crystal: "Hessonite", meaning: "You are the builder of foundations. Where others see chaos, you create order.", meaning_hi: "आप नींव के निर्माता हैं। जहां दूसरे अराजकता देखते हैं, वहां आप व्यवस्था बनाते हैं।", hex: "#f59e0b" },
-            5: { planet: "Mercury (Budh)", crystal: "Emerald", meaning: "You are the free spirit. Adaptable and quick-witted, luck favors your adventurous heart.", meaning_hi: "आप एक मुक्त आत्मा हैं। अनुकूलनीय और तेज़ बुद्धि, भाग्य आपके साहसी दिल का पक्ष लेता है।", hex: "#34d399" },
-            6: { planet: "Venus (Shukra)", crystal: "Diamond", meaning: "You are the nurturer. Driven by love and beauty, you bring harmony to every life you touch.", meaning_hi: "शुक्र आप पोषणकर्ता हैं। प्रेम और सौंदर्य द्वारा संचालित, आप हर जीवन में सामंजस्य लाते हैं।", hex: "#ffffff" },
-            7: { planet: "Ketu", crystal: "Cat's Eye", meaning: "You are the seeker of truth. Your spiritual insight pierces through illusions.", meaning_hi: "आप सत्य के साधक हैं। आपकी आध्यात्मिक अंतर्दृष्टि भ्रम को भेद देती है।", hex: "#a78bfa" },
-            8: { planet: "Saturn (Shani)", crystal: "Blue Sapphire", meaning: "You are the master of destiny. Through discipline and ambition, you achieve karmic balance.", meaning_hi: "आप भाग्य के मालिक हैं। अनुशासन और महत्वाकांक्षा के माध्यम से, आप कर्मिक संतुलन प्राप्त करते हैं।", hex: "#3b82f6" },
-            9: { planet: "Mars (Mangal)", crystal: "Red Coral", meaning: "You are the warrior of light. Compassionate yet fierce, you fight for what is right.", meaning_hi: "आप प्रकाश के योद्धा हैं। करुणामय फिर भी तीव्र, आप सही के लिए लड़ते हैं।", hex: "#ef4444" },
-            11: { planet: "Master Number", crystal: "Labradorite", meaning: "The Spiritual Messenger. You possess high intuition and a charisma that inspires others.", meaning_hi: "आध्यात्मिक दूत। आपके पास उच्च अंतर्ज्ञान और एक करिश्मा है जो दूसरों को प्रेरित करता है।", hex: "#64748b" },
-            22: { planet: "Master Number", crystal: "Black Tourmaline", meaning: "The Master Builder. You have the rare power to turn massive dreams into tangible reality.", meaning_hi: "मास्टर निर्माता। आपके पास बड़े सपनों को मूर्त वास्तविकता में बदलने की दुर्लभ शक्ति है।", hex: "#1f2937" },
-            33: { planet: "Master Number", crystal: "Lapis Lazuli", meaning: "The Master Teacher. Your path is one of pure devotion. You guide others by love.", meaning_hi: "मास्टर शिक्षक। आपका मार्ग शुद्ध समर्पण का है। आप प्रेम से दूसरों का मार्गदर्शन करते हैं।", hex: "#0ea5e9" },
+            1: { planet: "Sun (Surya)", crystal: "Ruby", meaning: "You carry the radiance of the Sun. A born leader with natural authority, your soul chosen a path of vitality and creation.", meaning_hi: "सूर्य का प्रकाश आपमें बसता है। आप एक प्राकृतिक नेता हैं, जिसका आत्मा जीवन शक्ति और सृजनशीलता का मार्ग चुनता है।", hex: "#f59e0b" },
+            2: { planet: "Moon (Chandra)", crystal: "Moonstone", meaning: "Guided by the Moon, you are the peacemaker. Your intuition is your superpower.", meaning_hi: "चंद्रमा द्वारा निर्देशित, आप शांतिदूत हैं। आपका अंतर्ज्ञान आपकी सुपरपावर है।", hex: "#93c5fd" },
+            3: { planet: "Jupiter (Guru)", crystal: "Yellow Sapphire", meaning: "Blessed by Jupiter, you are the creator. Optimism flows through you naturally.", meaning_hi: "बृहस्पति की कृपा आपके साथ है। आप एक सृजनकर्ता हैं, आशावाद आपके माध्यम से स्वाभाविक रूप से बहता है।", hex: "#fbbf24" },
+            4: { planet: "Rahu", crystal: "Hessonite", meaning: "You are the builder of foundations. Where others see chaos, you create order.", meaning_hi: "आप नींव के निर्माता हैं। जहां दूसरे अराजकता देखते हैं, आप व्यवस्था बनाते हैं।", hex: "#d97706" },
+            5: { planet: "Mercury (Budh)", crystal: "Emerald", meaning: "You are the free spirit. Adaptable and quick-witted, luck favors your adventurous heart.", meaning_hi: "आप एक मुक्त आत्मा हैं। अनुकूल और तेज-तर्रार, भाग्य आपके रोमांचक हृदय का पक्ष लेता है।", hex: "#10b981" },
+            6: { planet: "Venus (Shukra)", crystal: "Diamond", meaning: "You are the nurturer. Driven by love and beauty, you bring harmony to every life you touch.", meaning_hi: "शुक्र आपको आशीर्वाद देता है। आप एक पोषक हैं, प्रेम और सौंदर्य द्वारा प्रेरित, आप जिस जीवन को छूते हैं उसमें सामंजस्य लाते हैं।", hex: "#ec4899" },
+            7: { planet: "Ketu", crystal: "Cat's Eye", meaning: "You are the seeker of truth. Your spiritual insight pierces through illusions.", meaning_hi: "आप सत्य के साधक हैं। आपकी आध्यात्मिक अंतर्दृष्टि भ्रम को भेद देती है।", hex: "#6366f1" },
+            8: { planet: "Saturn (Shani)", crystal: "Blue Sapphire", meaning: "You are the master of destiny. Through discipline and ambition, you achieve karmic balance.", meaning_hi: "आप भाग्य के स्वामी हैं। अनुशासन और महत्वाकांक्षा के माध्यम से, आप कर्मिक संतुलन प्राप्त करते हैं।", hex: "#0ea5e9" },
+            9: { planet: "Mars (Mangal)", crystal: "Red Coral", meaning: "You are the warrior of light. Compassionate yet fierce, you fight for what is right.", meaning_hi: "आप प्रकाश के योद्धा हैं। करुणामय फिर भी भीषण, आप सही के लिए लड़ते हैं।", hex: "#ef4444" },
+            11: { planet: "Master Number", crystal: "Labradorite", meaning: "The Spiritual Messenger. You possess high intuition and a charisma that inspires others.", meaning_hi: "आध्यात्मिक संदेशवाहक। आपमें उच्च अंतर्ज्ञान और करिश्मा है जो दूसरों को प्रेरित करता है।", hex: "#8b5cf6" },
+            22: { planet: "Master Number", crystal: "Black Tourmaline", meaning: "The Master Builder. You have the rare power to turn massive dreams into tangible reality.", meaning_hi: "मास्टर बिल्डर। आपके पास विशाल सपनों को मूर्त वास्तविकता में बदलने की दुर्लभ शक्ति है।", hex: "#1e293b" },
+            33: { planet: "Master Number", crystal: "Lapis Lazuli", meaning: "The Master Teacher. Your path is one of pure devotion. You guide others by love.", meaning_hi: "मास्टर शिक्षक। आपका मार्ग शुद्ध भक्ति का है। आप प्रेम से दूसरों का मार्गदर्शन करते हैं।", hex: "#3b82f6" },
         };
 
         const useAudio = () => {
@@ -185,7 +197,7 @@
         const CosmicCrystal = ({ hexColor }) => {
             return (
                 <div className="relative w-64 h-64 flex items-center justify-center my-6 perspective-1000">
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1] }} transition={{ duration: 4, repeat: Infinity }} className="absolute inset-0 rounded-full blur-2xl" style={{ background: `radial-gradient(circle, ${hexColor}, transparent)` }} />
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.2, 1] }} transition={{ duration: 4, repeat: Infinity }} className="absolute inset-0 rounded-full" style={{ background: `radial-gradient(circle, ${hexColor}40, transparent 70%)` }}></motion.div>
                     <motion.div className="relative w-32 h-32" animate={{ rotateY: [0, 360], rotateX: [10, -10, 10] }} transition={{ rotateY: { duration: 12, repeat: Infinity, ease: "linear" }, rotateX: { duration: 8, repeat: Infinity, ease: "easeInOut" } }}>
                         <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                             <defs>
@@ -198,7 +210,7 @@
                                     <stop offset="100%" stopColor="white" stopOpacity="0.4" />
                                 </linearGradient>
                             </defs>
-                            <motion.path d="M50 5 L95 50 L50 95 L5 50 Z" fill="url(#crystalGrad)" stroke={hexColor} strokeWidth="1" filter="url(#glow)" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 1.5 }} />
+                            <motion.path d="M50 5 L95 50 L50 95 L5 50 Z" fill="url(#crystalGrad)" stroke={hexColor} strokeWidth="1" filter="url(#glow)" initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2 }} />
                             <motion.path d="M50 5 L50 95 M5 50 L95 50" fill="none" stroke="white" strokeWidth="0.5" opacity="0.8" filter="url(#glow)" />
                         </svg>
                     </motion.div>
@@ -250,10 +262,11 @@
                         {/* Shimmer Effect */}
                         <div className="absolute inset-0 bg-card-shimmer -translate-x-full group-hover:animate-shimmer"></div>
 
-                        <div className="relative z-10 mb-4 transform group-hover:scale-110 transition-transform duration-500">
+                        <div className="relative z-10 mb-2 transform group-hover:scale-110 transition-transform duration-500">
                              <CardIcon />
                         </div>
-                        <span className="text-xs tracking-[0.3em] text-starlight-200 uppercase font-bold mt-2 drop-shadow-md group-hover:text-white transition-colors">Cosmic</span>
+                        <span className="text-sm tracking-[0.2em] text-gold-400 uppercase font-bold drop-shadow-md group-hover:text-gold-300 transition-colors text-center px-2">{CARD_NAMES[index]}</span>
+                        <span className="text-xs tracking-[0.15em] text-starlight-300 uppercase font-light drop-shadow-md group-hover:text-white transition-colors text-center px-2 mt-1">{CARD_SUBTITLES[index]}</span>
                     </div>
                 </motion.div>
             );
@@ -316,10 +329,10 @@
                                                 Enter Date of Birth
                                             </label>
                                             <input type="date" required value={birthDate} onChange={(e) => setBirthDate(e.target.value)}
-                                                className="w-full bg-void-950/80 border border-void-800 focus:border-gold-500 focus:shadow-neon-gold text-white text-center text-xl rounded-lg py-4 px-4 mb-6"
+                                                className="w-full bg-void-950/80 border border-void-800 focus:border-gold-500 focus:shadow-neon-gold text-white text-center text-xl rounded-lg py-4 px-4 mb-6 transition-all"
                                             />
                                             <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onMouseEnter={playHover}
-                                                className="w-full bg-gold-gradient text-white font-bold py-4 rounded-lg uppercase tracking-widest text-sm shadow-lg hover:shadow-neon-gold border border-gold-500/50"
+                                                className="w-full bg-gold-gradient text-white font-bold py-4 rounded-lg uppercase tracking-widest text-sm shadow-lg hover:shadow-neon-gold border border-gold-500 transition-all"
                                             >
                                                 Reveal My Path
                                             </motion.button>
@@ -355,17 +368,17 @@
                                         
                                         <div className="bg-gradient-to-b from-void-900 to-black rounded-[1.8rem] p-6 md:p-10 flex flex-col items-center text-center relative z-10">
                                             
-                                            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }} className="inline-block px-4 py-1 rounded-full border border-gold-500/50 bg-gold-500/10 mb-4">
-                                                Life Path {calculatedNum}
+                                            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }} className="inline-block px-4 py-1 rounded-full border border-gold-500/50 bg-gold-500/10 mb-6">
+                                                <span className="text-xs uppercase tracking-widest text-gold-400 font-bold">Life Path {calculatedNum}</span>
                                             </motion.div>
 
-                                            <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="text-3xl md:text-4xl text-white mb-2 font-serif text-shadow-lg">
+                                            <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="text-3xl md:text-4xl text-white mb-2 font-serif text-shadow">
                                                 {data.planet}
                                             </motion.h2>
 
                                             <CosmicCrystal hexColor={data.hex} />
 
-                                            <motion.h3 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="text-4xl md:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-500 mb-6">
+                                            <motion.h3 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} className="text-4xl md:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-300 mb-8">
                                                 {data.crystal}
                                             </motion.h3>
 
@@ -373,14 +386,14 @@
                                                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }} className="text-white text-lg md:text-xl leading-relaxed italic drop-shadow-md">
                                                     "{data.meaning}"
                                                 </motion.p>
-                                                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }} className="text-gold-400 text-xl md:text-2xl leading-relaxed font-serif">
+                                                <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.6 }} className="text-gold-400 text-xl md:text-2xl leading-relaxed font-hindi drop-shadow-md">
                                                     "{data.meaning_hi}"
                                                 </motion.p>
                                             </div>
 
                                             {/* Gift CTA */}
-                                            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 1.8, type: "spring" }} className="w-full bg-void-950 border border-gold-500/30 rounded-2xl p-6 hover:border-gold-500/60 transition-colors duration-300 relative overflow-hidden group">
-                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-400/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite_0.5s]"></div>
+                                            <motion.div initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 1.8, type: "spring" }} className="w-full bg-void-950 border border-gold-500/30 rounded-xl p-4 md:p-6 group relative overflow-hidden">
+                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gold-400/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]"></div>
                                                 <div className="flex flex-col items-center gap-3 relative z-10">
                                                     <div className="flex items-center gap-2">
                                                         <span className="text-xl animate-bounce">🎁</span>
@@ -388,14 +401,14 @@
                                                     </div>
                                                     <p className="text-slate-400 text-xs mb-2">Unlock clarity & protection with a blessed <strong className="text-white">Rudraksha</strong>.</p>
                                                     <motion.a href="https://wa.me/917269031175" target="_blank" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} onMouseEnter={playHover}
-                                                        className="inline-block px-6 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-bold text-sm rounded-lg hover:shadow-neon-gold transition-all duration-300"
+                                                        className="inline-block px-6 py-2 bg-gradient-to-r from-gold-500 to-gold-600 text-white font-bold text-sm rounded-lg hover:shadow-neon-gold transition-all"
                                                     >
                                                         Contact on WhatsApp
                                                     </motion.a>
                                                 </div>
                                             </motion.div>
 
-                                            <button onClick={() => { playClick(); setStep('input'); setBirthDate(''); }} className="mt-8 text-sm text-slate-500 hover:text-white underline transition-colors duration-300">
+                                            <button onClick={() => { playClick(); setStep('input'); setBirthDate(''); }} className="mt-8 text-sm text-slate-500 hover:text-white underline transition-colors">
                                                 ← Back to Start
                                             </button>
                                         </div>
